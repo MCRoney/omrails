@@ -72,7 +72,7 @@ Omrails::Application.configure do
     :s3_credentials => {
       :bucket => "onemonthrailssavedbythe90s",
       :access_key_id => "AKIAJ25XGX7MVJ2VYL2A",
-      :secret_access_key => "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"'"
+      :secret_access_key => "7xafJoGrD4SJ3z0P4/vxZjYrYExuJQEnN4X/jpMy"
     }
   }
 end
