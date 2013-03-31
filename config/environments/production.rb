@@ -65,4 +65,14 @@ Omrails::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Paperclip should use Amazon S3 on Heroku
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => "onemonthrailssavedbythe90s",
+      :access_key_id => "AKIAJ25XGX7MVJ2VYL2A",
+      :secret_access_key => "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"'"
+    }
+  }
 end
