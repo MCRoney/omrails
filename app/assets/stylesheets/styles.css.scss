@@ -3,12 +3,14 @@
 @import url(http://fonts.googleleapis.com/css?family=oxygen);*/
 
 $btnPrimaryBackground: green;
-$navbarBackgroundHighlight: white;
-$navbarBackground: white;
+$navbarBackgroundHighlight: purple;
+$navbarBackground: yellow;
 
 @import 'bootstrap';
 
 body  {
+	background-color: purple;
+	color: green;
 	padding-top: 60px;
 }
 
@@ -23,15 +25,16 @@ body  {
 .footer {
 
 	margin-top: 50px;
-	color: $grayLight;
+	color: $pink;
 	a {
-		color: $gray;
+		color: $pink;
 	}
 }
 
 /* Required for jQuery Masonry */
 
 .box {
+	background-color: yellow;
 	margin: 5px;
 	padding: 5px;
 	font-size: 11px;
