@@ -13,4 +13,4 @@ jQuery ->
         # What to do at the bottom of the page
         $('.pagination').text("Fetching more pins...")
         $.getScript(url)
-    	$(window).scroll()
+    $(window).scroll()
