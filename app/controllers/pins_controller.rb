@@ -3,7 +3,10 @@ class PinsController < ApplicationController
 
   # GET /pins
   # GET /pins.json
-  def index
+def index
+  if params[:search]
+    @pins = Pin.page(params[:page]).per_page(30).find(:all, :conditions => ['description LIKE ?', "%#{params[:search]}%"])
+  else  
     @pins = Pin.order("created_at desc").page(params[:page]).per_page(30)
 
     respond_to do |format|
@@ -12,6 +15,7 @@ class PinsController < ApplicationController
       format.js
     end
   end
+end
 
   # GET /pins/1
   # GET /pins/1.json
