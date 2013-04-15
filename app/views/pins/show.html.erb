@@ -8,11 +8,7 @@
 		<p>
   		<%= @pin.user.name %>
 		</p>
-		<% if current_user && !current_user.voted_for?(pin) %>
-   	<%= link_to raw("<i class=\"icon-thumbs-up\"></i>"), vote_pin_path(pin, type: "up"), method: "post" %>
-  	<%= link_to raw("<i class=\"icon-thumbs-down\"></i>"), vote_pin_path(pin, type: "down"), method: "post" %>
-<% end %>
-<%= pin.reputation_for(:votes).to_i %>
+		
 		<% if current_user == @pin.user %>
 	<%= link_to 'Edit', edit_pin_path(@pin) %> |
 	<% end %>
