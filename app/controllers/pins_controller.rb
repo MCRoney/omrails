@@ -7,7 +7,7 @@ def index
   if params[:search]
     @pins = Pin.page(params[:page]).per_page(30).find(:all, :conditions => ['description LIKE ?', "%#{params[:search]}%"])
   else  
-    @pins = Pin.page(params[:page]).per_page(30).find_with_reputation(:votes, :all, order: "created_at desc")
+    @pins = Pin.order("created_at desc").page(params[:page]).per_page(30)
 
     respond_to do |format|
       format.html # index.html.erb

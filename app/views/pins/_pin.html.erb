@@ -9,12 +9,6 @@
 		</strong>
 	</p>
 
-<% if current_user && !current_user.voted_for?(pin) %>
-   	<%= link_to raw("<i class=\"icon-thumbs-up\"></i>"), vote_pin_path(pin, type: "up"), method: "post" %>
-   	<%= pin.reputation_for(:votes).to_i %>
-  	<%= link_to raw("<i class=\"icon-thumbs-down\"></i>"), vote_pin_path(pin, type: "down"), method: "post" %>
-  	<% else pin.reputation_for(:votes).to_i %>
-<% end %>
 
 	<% if current_user == pin.user %>
 		<p>
