@@ -14,7 +14,7 @@
   	<%= link_to raw("<i class=\"icon-thumbs-down\"></i>"), vote_pin_path(pin, type: "down"), method: "post" %>
 
 <% end %>
-<%= pluralize pin.reputation_value_for(:votes).to_i, "vote" %>
+
 
 	<% if current_user == pin.user %>
 		<p>
