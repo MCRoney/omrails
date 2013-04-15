@@ -76,6 +76,13 @@ end
     end
   end
 
+def vote
+  value = params[:type] == "up" ? 1 : -1
+  @pin = Pin.find(params[:id])
+  @pin.add_or_update_evaluation(:votes, value, current_user)
+  redirect_to :back, notice: "Thank you for voting"
+end
+
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
