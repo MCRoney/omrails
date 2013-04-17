@@ -3,6 +3,7 @@ class Pin < ActiveRecord::Base
 
   validates :description, presence: true
 	validates :user_id, presence: true
+  validates_uniqueness_of :description, :case_sensitive => false
   validates_attachment :image, presence: true, 
   														content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
   														size: { less_than: 5.megabytes } 
@@ -16,9 +17,6 @@ class Pin < ActiveRecord::Base
   	self.image = URI.parse(url_value) unless url_value.blank?
   	super
   end
-
-description = "Blue Jeans"
-model = Pin.find(:all, :conditions => [ "lower(description) = ?", description.downcase ]) || Pin.create(:description => name)
 
 end
 
