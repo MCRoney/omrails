@@ -17,6 +17,11 @@ class Pin < ActiveRecord::Base
   	super
   end
 
+def self.find_all_by_lowercasing_discription(str_array)
+    wrapped = str_array.collect { |a| "'"+ "#{a.downcase}" + "'" }
+    return MyModel.where("lower(\"my_models\".\"name\") IN (#{wrapped.join(', ')})")
+end
+
 end
 
 
