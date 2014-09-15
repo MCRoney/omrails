@@ -1,5 +1,10 @@
 <div class="box">
+	<% if :image.present? %>
 	<%= link_to (image_tag pin.image(:medium)), pin %>
+<% else %>
+	<iframe width="160" height="120" src="http://www.youtube.com/embed/<%= pin.yt_video_id %>" frameborder="0" ></iframe>
+<% end %> 
+
 	<p class="description">
 		<%= pin.description %>
 	</p>

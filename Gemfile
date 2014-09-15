@@ -10,6 +10,9 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'tire'
 gem 'activerecord-reputation-system', require: 'reputation_system'
+gem 'youtube_it'
+gem 'inherited_resources'
+gem 'acts_as_commentable'
 
 group :production do
 	gem 'pg'

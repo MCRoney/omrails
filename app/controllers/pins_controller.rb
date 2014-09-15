@@ -47,6 +47,7 @@ end
   # POST /pins
   # POST /pins.json
   def create
+    pin.yt_video_id = yt_video_ids
     @pin = current_user.pins.new(params[:pin])
 
     respond_to do |format|

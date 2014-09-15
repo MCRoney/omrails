@@ -1,7 +1,11 @@
 <div class="row">
 	<div class="span6 offset3">
 		<div class="well" style="background: yellow">
+	<% if :image.present? %>
 		<%= image_tag @pin.image %>
+	<% else %>
+		<iframe width="420" height="236" src="http://www.youtube.com/embed/<%= pin.yt_video_id %>" frameborder="0" ></iframe>
+	<% end %> 
 		<p>
   		<%= @pin.description %>
 		</p>
