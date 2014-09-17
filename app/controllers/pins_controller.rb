@@ -63,7 +63,7 @@ end
   # PUT /pins/1
   # PUT /pins/1.json
   def update
-    @pin = current_user.pins.find(params[:id])
+    @pin = Pin.find(params[:id])
 
     respond_to do |format|
       if @pin.update_attributes(params[:pin])
