@@ -41,7 +41,7 @@ end
 
   # GET /pins/1/edit
   def edit
-    @pin = current_user.pins.find(params[:id])
+    @pin = Pin.find(params[:id])
   end
 
   # POST /pins
@@ -86,7 +86,7 @@ end
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
-    @pin = current_user.pins.find(params[:id])
+    @pin = Pin.find(params[:id])
     @pin.destroy
 
     respond_to do |format|
